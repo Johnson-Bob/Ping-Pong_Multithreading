@@ -1,6 +1,6 @@
 package com.open.multithreading;
 
-public class PingPong {
+public class PingPongSync {
     private final static String PING = "Ping";
     private final static String PONG = "Pong";
 
@@ -20,9 +20,9 @@ public class PingPong {
     }
 
     public static void main(String[] args) {
-        PingPong pingPong = new PingPong();
-        new Thread(() -> pingPong.action(PING)).start();
-        new Thread(() -> pingPong.action(PONG)).start();
+        PingPongSync pingPongSync = new PingPongSync();
+        new Thread(() -> pingPongSync.action(PING)).start();
+        new Thread(() -> pingPongSync.action(PONG)).start();
     }
 
     private static void wait(Object o) {
